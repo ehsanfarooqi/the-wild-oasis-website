@@ -1,7 +1,11 @@
+export const metadata = {
+  title: "About",
+};
+
 export default function Page() {
   return (
     <div>
-      <hy1>About the Wild Oasis </hy1>
+      <h1>About the Wild Oasis </h1>
     </div>
   );
 }
