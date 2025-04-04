@@ -13,7 +13,7 @@ export async function getCabin(id) {
     .single();
 
   // For testing
-  // await new Promise((res) => setTimeout(res, 1000));
+  // await new Promise((res) => setTimeout(res, 3000));
 
   if (error) {
     console.error(error);
@@ -109,6 +109,8 @@ export async function getBookedDatesByCabinId(cabinId) {
     .select("*")
     .eq("cabinId", cabinId)
     .or(`startDate.gte.${today},status.eq.checked-in`);
+
+  // await new Promise((res) => setTimeout(res, 2000));
 
   if (error) {
     console.error(error);
