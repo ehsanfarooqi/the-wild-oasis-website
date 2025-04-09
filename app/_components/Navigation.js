@@ -4,9 +4,9 @@ import { auth } from "../_lib/auth";
 export default async function Navigation() {
   const session = await auth();
 
-  const getName = session?.user?.name?.trim().split(" ")[0];
-  const getFirstName =
-    getName?.charAt(0).toUpperCase() + getName?.slice(1).toLowerCase();
+  // const getName = session?.user?.name?.trim().split(" ")[0];
+  // const getFirstName =
+  //   getName?.charAt(0).toUpperCase() + getName?.slice(1).toLowerCase();
 
   return (
     <nav className="z-10 text-xl">
@@ -38,7 +38,7 @@ export default async function Navigation() {
                 className="h-8 rounded-full"
                 alt={session.user.name}
               />
-              <span>{getFirstName}</span>
+              <span>{session.user.name.split(" ").at(0)}</span>
             </Link>
           ) : (
             <Link
